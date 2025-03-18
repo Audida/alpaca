@@ -69,3 +69,8 @@ Then run the Packer script:
 <pre>
 $ bash run_packer.sh
 </pre>
+
+
+### Additionally
+
+* Add port forwarding in Virtual Box settings for generated range
