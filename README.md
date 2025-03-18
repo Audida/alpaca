@@ -6,12 +6,26 @@
 
 - J. Eckroth, K. Chen, H. Gatewood, B. Belna. "Alpaca: Building Dynamic Cyber Ranges with Procedurally-Generated Vulnerability Lattices," Proceedings of the Annual ACM Southeast Conference, 2019. [PDF](publications/acmse-2019-alpaca.pdf)
 
-## Requirements
+
+
+## Requirements (Official)
 
 - [SWI-Prolog](http://www.swi-prolog.org/)
 - [Packer](https://packer.io/)
 - [Ansible](https://www.ansible.com/)
 - [Graphviz](https://www.graphviz.org/)
+
+## Working versions
+
+(Conda environment recommended)
+
+* Ansible  2.8
+* Python 3.6
+* SWI-Prolog 8.4.2
+* Packer 1.12 (Newest at the time of writing)
+* VirtualBox 7.1.6 (Newest at the time of writing)
+
+
 
 ## Running Alpaca
 
@@ -55,4 +69,3 @@ Then run the Packer script:
 <pre>
 $ bash run_packer.sh
 </pre>
-
