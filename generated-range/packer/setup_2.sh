@@ -16,9 +16,9 @@ sudo mount -o loop "${vbox_guest_additions_iso}" /tmp/vbox_guest_additions
 cd /tmp/vbox_guest_additions
 # Don't die on failure here, without X11 libraries installed (creates a mess of our OS),
 # the stuff we need installs and X11 will fail. 
-set +e
-sudo ./VBoxLinuxAdditions.run --nox11
-set -e
+##set +e
+##sudo ./VBoxLinuxAdditions.run --nox11
+##set -e
 sleep 1
 cd /
 sudo umount /tmp/vbox_guest_additions

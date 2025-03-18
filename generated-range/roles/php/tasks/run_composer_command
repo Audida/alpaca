@@ -1,0 +1,1 @@
+chdir=/tmp/{{item}}/var/www/html/{{item}} /usr/local/bin/composer install

@@ -32,7 +32,9 @@
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "packer-virtualbox-iso-ubuntu-18.04.1"
+      "vm_name": "packer-virtualbox-iso-ubuntu-18.04.6",
+      "output_directory": "output-virtualbox",
+      "format": "ovf"
     }
   ],
   "provisioners": [

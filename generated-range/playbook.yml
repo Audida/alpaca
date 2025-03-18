@@ -1,0 +1,44 @@
+---
+- hosts: all
+  become: true
+  vars:
+      apache:
+        modules:
+          - libapache2-mod-php
+
+      mysql:
+        db:
+          - logindb1
+        root:
+          - 4Ta^h
+
+      openssh:
+        allowrootlogin:
+          - Yes
+        version:
+          - 7.6p1
+
+      php:
+        deployments:
+          - loginpage1
+          - loginpage1-badsql
+
+      users:
+        logins:
+          - jane
+        passwords:
+          - LoxOD
+        root:
+          - g8dsK
+
+      vsftpd:
+        version:
+          - 2.3.4
+
+
+  roles:
+    - apache
+    - mysql
+    - openssh
+    - users
+    - vsftpd
