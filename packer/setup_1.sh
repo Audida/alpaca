@@ -32,13 +32,6 @@ apt-get install -y build-essential curl dkms linux-headers-$(uname -r) nfs-commo
 
 
 
-##deboogie
-##apt-get install -y libmysqlclient-dev
-
-##pip install PyMySQL
-
-
-
 # Setup sudo to allow no-password sudo for "admin"
 groupadd -rf admin
 usermod -a -G admin vagrant
