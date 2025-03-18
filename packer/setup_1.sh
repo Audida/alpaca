@@ -6,22 +6,38 @@ set -x
 set -e
 
 cat > "/etc/apt/sources.list" << EOF
-deb http://mirror.picosecond.org/ubuntu/ bionic main restricted universe multiverse
-deb http://mirror.picosecond.org/ubuntu/ bionic-updates main restricted universe multiverse
-deb http://mirror.picosecond.org/ubuntu/ bionic-backports main restricted universe multiverse
-deb http://mirror.picosecond.org/ubuntu/ bionic-security main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ bionic main restricte
+deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates main restricted
+deb http://us.archive.ubuntu.com/ubuntu/ bionic universe
+deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates universe
+deb http://us.archive.ubuntu.com/ubuntu/ bionic multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ bionic-updates multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu bionic-security main restricted
+deb http://security.ubuntu.com/ubuntu bionic-security universe
+deb http://security.ubuntu.com/ubuntu bionic-security multiverse
 EOF
-
 
 # Perform an update and full upgrade.
 sudo rm -rf /var/lib/apt/lists/*
 apt-get update
-apt-get -y --force-yes dist-upgrade
+apt-get -y dist-upgrade
+
+
 
 # Install necessary libraries for guest additions and Vagrant NFS Share
 # Also install curl, comes with most "cloud images" distributed by Ubuntu by default
 # TODO: some of this is already installed via ../http/bionic_preseed_template.cfg on bionic? deduplicate?
-apt-get install -y --force-yes build-essential curl dkms linux-headers-$(uname -r) nfs-common
+apt-get install -y build-essential curl dkms linux-headers-$(uname -r) nfs-common
+
+
+
+##deboogie
+##apt-get install -y libmysqlclient-dev
+
+##pip install PyMySQL
+
+
 
 # Setup sudo to allow no-password sudo for "admin"
 groupadd -rf admin
